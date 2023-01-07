@@ -95,6 +95,7 @@
   background: linear-gradient(to right,rgb(97, 220, 97),rgb(46, 187, 46),rgb(6, 90, 6));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .winner-icon{
