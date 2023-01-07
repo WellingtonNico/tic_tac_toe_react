@@ -79,8 +79,8 @@ function App() {
   return (
     <div className="App">
       {winnerPlayer != null &&
-        <div >
-          <span className='winner'>Parabens ao Jogador </span>
+        <div className='winner-div'>
+          <span className='winner'>Parabéns ao Jogador </span>
           <span className='winner-icon'>{winnerPlayer == 1 ? '❌' : '⭕️'}</span>
         </div>
       }

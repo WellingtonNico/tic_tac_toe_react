@@ -14,8 +14,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 600px;
-  height: 600px;
+  width: 45%;
+  aspect-ratio : 1 / 1;
   /* overflow:hidden; */
 
 }
@@ -23,6 +23,7 @@
 .block{
   background-color: white;
   /* border: solid blue; */
+  resize: both;
   width: 33.33333% !important;
   height: 33.33333% !important;
   display: flex;
@@ -36,7 +37,8 @@
 }
 
 .block>span{
-  font-size: 8rem;
+  position:absolute;
+  font-size: calc((100vw - 1rem) / 6);
   color: red;
   font-weight: bold;
 }
@@ -115,3 +117,7 @@
   animation: color-change .5s infinite;
 }
 
+.winner-div{
+  text-align: center;
+  margin-bottom: 2rem;
+}
