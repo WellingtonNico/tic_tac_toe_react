@@ -1,38 +1,117 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background: rgb(62, 62, 62);
+  min-height: 100vh;
+}
+
+.blocks{
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 600px;
+  height: 600px;
+  /* overflow:hidden; */
+
 }
 
-.App-link {
-  color: #61dafb;
+.block{
+  background-color: white;
+  /* border: solid blue; */
+  width: 33.33333% !important;
+  height: 33.33333% !important;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: 1px black solid;
+  position: relative;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.block>span{
+  font-size: 8rem;
+  color: red;
+  font-weight: bold;
 }
+
+.block::after{
+  content:'';
+  z-index: 1000;
+  display: none;
+  background: black;
+  position: absolute;
+  height: 15px;
+}
+
+.block.horizontal::after{
+  display: block;
+  width:110%;
+}
+.block.vertical::after{
+  display: block;
+  rotate: 90deg;
+  width:110%;
+}
+.block.diagonal1::after{
+  display: block;
+  rotate:45deg;
+  width:150%;
+}
+.block.diagonal2::after{
+  display: block;
+  rotate:135deg;
+  width:150%;
+}
+
+.block:hover{
+  background-color: rgb(242, 241, 241);
+}
+
+
+.restart-button{
+  border-radius: 6px;
+  margin-top: 2rem;
+  background-color: green;
+  color:white;
+  font-weight: bold;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.winner{
+  font-weight: bold;
+  font-size: 4rem;
+  background: linear-gradient(to right,rgb(97, 220, 97),rgb(46, 187, 46),rgb(6, 90, 6));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.winner-icon{
+  font-size: 4rem;
+}
+
+.broken-game{
+  font-weight: bold;
+  font-size: 4rem;
+  color: red;
+}
+
+
+@keyframes color-change {
+  0% { color: red; }
+  50% { color: rgb(33, 210, 33); }
+  100% { color: blue; }
+}
+.animated-winner > span{
+  animation: color-change .5s infinite;
+}
+
